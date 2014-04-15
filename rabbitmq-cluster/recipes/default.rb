@@ -26,6 +26,13 @@ rabbitmq_user node['rabbitmq_cluster']['user'] do
   action :set_tags
 end
 
+rabbitmq_policy "ha-all" do
+  pattern "^(?!amq\\.).*"
+  params "ha-mode" => "all"
+  priority 1
+  action :set
+end
+
 execute 'reset-node' do
   command 'rabbitmqctl stop_app && rabbitmqctl reset && rabbitmqctl start_app'
   action :run
