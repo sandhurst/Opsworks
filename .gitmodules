@@ -1,3 +1,24 @@
 [submodule "rabbitmq"]
 	path = rabbitmq
 	url = https://github.com/sandhurst/rabbitmq.git
+[submodule "apt"]
+	path = apt
+	url = https://github.com/opscode-cookbooks/apt.git
+[submodule "build-essential"]
+	path = build-essential
+	url = https://github.com/opscode-cookbooks/build-essential.git
+[submodule "erlang"]
+	path = erlang
+	url = https://github.com/opscode-cookbooks/erlang.git
+[submodule "hostsfile"]
+	path = hostsfile
+	url = https://github.com/customink-webops/hostsfile.git
+[submodule "yum"]
+	path = yum
+	url = https://github.com/opscode-cookbooks/yum.git
+[submodule "yum-epel"]
+	path = yum-epel
+	url = https://github.com/opscode-cookbooks/yum-epel.git
+[submodule "yum-erlang_solutions"]
+	path = yum-erlang_solutions
+	url = https://github.com/opscode-cookbooks/yum-erlang_solutions.git
