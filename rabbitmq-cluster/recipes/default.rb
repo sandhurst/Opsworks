@@ -21,6 +21,11 @@ rabbitmq_user node['rabbitmq_cluster']['user'] do
   action :set_permissions
 end
 
+rabbitmq_user node['rabbitmq_cluster']['user'] do
+  tag "administrator"
+  action :set_tags
+end
+
 execute 'reset-node' do
   command 'rabbitmqctl stop_app && rabbitmqctl reset && rabbitmqctl start_app'
   action :run
