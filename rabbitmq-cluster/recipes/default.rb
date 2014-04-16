@@ -6,6 +6,11 @@ node.set['rabbitmq']['cluster_disk_nodes'] = rabbit_nodes
 
 include_recipe 'rabbitmq'
 
+execute 'reset-node' do
+  command 'rabbitmqctl stop_app && rabbitmqctl reset && rabbitmqctl start_app'
+  action :run
+end
+
 rabbitmq_user "guest" do
   action :delete
 end
@@ -31,9 +36,4 @@ rabbitmq_policy "ha-all" do
   params "ha-mode" => "all"
   priority 1
   action :set
-end
-
-execute 'reset-node' do
-  command 'rabbitmqctl stop_app && rabbitmqctl reset && rabbitmqctl start_app'
-  action :run
 end
