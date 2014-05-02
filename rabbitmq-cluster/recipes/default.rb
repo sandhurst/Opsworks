@@ -6,11 +6,6 @@ node.set['rabbitmq']['cluster_disk_nodes'] = rabbit_nodes
 
 include_recipe 'rabbitmq'
 
-execute 'reset-node' do
-  command 'rabbitmqctl stop_app && rabbitmqctl reset && rabbitmqctl start_app'
-  action :run
-end
-
 rabbitmq_user "guest" do
   action :delete
 end
