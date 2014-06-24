@@ -28,7 +28,9 @@ end
 
 rabbitmq_policy "ha-two" do
   pattern "^(?!amq\\.).*"
-  params {"ha-mode" => "exactly","ha-params" => 2, "ha-sync-mode" => "automatic"}
+  params "ha-mode" => "exactly"
+  params "ha-params" => 2
+  params "ha-sync-mode" => "automatic"
   priority 1
   action :set
 end
